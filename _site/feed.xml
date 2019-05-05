@@ -1,7 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-03T00:49:52-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Husain Zafar</title><entry><title type="html">Hello World</title><link href="http://localhost:4000/Hello-World/" rel="alternate" type="text/html" title="Hello World" /><published>2019-03-30T00:00:00-07:00</published><updated>2019-03-30T00:00:00-07:00</updated><id>http://localhost:4000/Hello-World</id><content type="html" xml:base="http://localhost:4000/Hello-World/">&lt;p&gt;Jekyll blog looks coool..!!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-04T21:31:26-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Husain Zafar</title><entry><title type="html">Calculate Number Of Subsets Of List A Whose Sum Is Divisible By K</title><link href="http://localhost:4000/Calculate-number-of-subsets-of-list-A-whose-sum-is-divisible-by-k/" rel="alternate" type="text/html" title="Calculate Number Of Subsets Of List A Whose Sum Is Divisible By K" /><published>2019-05-04T00:00:00-07:00</published><updated>2019-05-04T00:00:00-07:00</updated><id>http://localhost:4000/Calculate-number-of-subsets-of-list-A-whose-sum-is-divisible-by-k</id><content type="html" xml:base="http://localhost:4000/Calculate-number-of-subsets-of-list-A-whose-sum-is-divisible-by-k/">&lt;p&gt;Three approaches. O(n^3), O(n^2), O(n)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/config.png&quot; alt=&quot;_config.yml&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Jekyll blog looks coool..!!</summary></entry><entry><title type="html">Python</title><link href="http://localhost:4000/Python/" rel="alternate" type="text/html" title="Python" /><published>2019-03-02T00:00:00-08:00</published><updated>2019-03-02T00:00:00-08:00</updated><id>http://localhost:4000/Python</id><content type="html" xml:base="http://localhost:4000/Python/">&lt;p&gt;Let’s look at some cool Python features&lt;/p&gt;
+&lt;p&gt;Approach 1: O(n^3)
+Calculate sum of each subset and check for modulo&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/config.png&quot; alt=&quot;_config.yml&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Let’s look at some cool Python features</summary></entry><entry><title type="html">Matlab</title><link href="http://localhost:4000/Matlab/" rel="alternate" type="text/html" title="Matlab" /><published>2019-02-02T00:00:00-08:00</published><updated>2019-02-02T00:00:00-08:00</updated><id>http://localhost:4000/Matlab</id><content type="html" xml:base="http://localhost:4000/Matlab/">&lt;p&gt;Matlab !!&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def divisibleSubsetCount(A, k):
+	result = 0
+	n = len(A)
+	for start in range(0, n):
+		for end in range(start, n):
+			subsetSum = 0
+			for index in range(start, end+1):
+				subsetSum += A[index]
+			if(subsetSum % k == 0):
+				result += 1
+	return result
+			 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/config.png&quot; alt=&quot;_config.yml&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Matlab !!</summary></entry></feed>
+&lt;p&gt;Approach 2: O(n^2):
+Use prefix sum to calculate the subset sum efficiently.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def divisibleSubsetCount(A, k):
+	result = 0
+	n = len(A)
+	prefixSum = []
+	sum = 0
+	for num in A:
+		prefixSum.append(sum + num)
+		sum += num
+	
+	for start in range(0, n):
+		for end in range(start, n):
+			if start == 0:
+				subsetSum = prefixSum[end]
+			else:
+				subsetSum = prefixSum[end] - prefixSum[start-1]
+			if (subsetSum % k == 0):
+				result += 1
+	return result
+	
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">Three approaches. O(n^3), O(n^2), O(n)</summary></entry><entry><title type="html">Hello World</title><link href="http://localhost:4000/Hello-World/" rel="alternate" type="text/html" title="Hello World" /><published>2019-03-30T00:00:00-07:00</published><updated>2019-03-30T00:00:00-07:00</updated><id>http://localhost:4000/Hello-World</id><content type="html" xml:base="http://localhost:4000/Hello-World/">&lt;p&gt;Jekyll blog looks coool..!!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/config.png&quot; alt=&quot;_config.yml&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Jekyll blog looks coool..!!</summary></entry></feed>

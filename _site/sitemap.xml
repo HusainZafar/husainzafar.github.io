@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/Matlab/</loc>
-<lastmod>2019-02-02T00:00:00-08:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/Python/</loc>
-<lastmod>2019-03-02T00:00:00-08:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/Hello-World/</loc>
 <lastmod>2019-03-30T00:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/Calculate-number-of-subsets-of-list-A-whose-sum-is-divisible-by-k/</loc>
+<lastmod>2019-05-04T00:00:00-07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about/</loc>
