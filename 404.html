@@ -5,8 +5,12 @@
 <title>Redirecting to husainzafar.com</title>
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://husainzafar.com/">
+<!-- Forward the requested path to the new site and let it decide what exists
+     (its own 404 handles anything that doesn't). Static <meta> can't carry the
+     path, so JS does the path-preserving redirect; the <meta> is the no-JS
+     fallback to the homepage. -->
+<script>location.replace("https://husainzafar.com" + location.pathname + location.search + location.hash);</script>
 <meta http-equiv="refresh" content="0; url=https://husainzafar.com/">
-<script>location.replace("https://husainzafar.com/");</script>
 </head>
 <body>
 <p>This site has moved to <a href="https://husainzafar.com/">husainzafar.com</a>.</p>
